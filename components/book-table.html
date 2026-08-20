@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کامپوننت: جدول امانت‌ها</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="font-body min-h-screen bg-surface p-6 text-ink dark:bg-surface-dark dark:text-ink-inverse">
+
+  <p class="mb-4 text-sm text-ink-muted">
+    پنجره را زیر ۶۴۰ پیکسل کوچک کن — جدول باید داخل کارت خودش به‌صورت افقی اسکرول شود، نه اینکه کل چیدمان صفحه را بهم بریزد.
+  </p>
+
+  <!-- ================= COPY FROM HERE ================= -->
+
+  <div class="card">
+    <div class="mb-4 flex items-center justify-between gap-3">
+      <h2 class="font-display text-lg font-semibold">امانت‌های جاری</h2>
+      <button type="button" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="size-4">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        امانت جدید
+      </button>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>کتاب</th>
+            <th>عضو</th>
+            <th>تاریخ سررسید</th>
+            <th>وضعیت</th>
+            <th class="text-end">عملیات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p class="font-medium">بوف کور</p>
+              <p class="text-xs text-ink-muted">صادق هدایت</p>
+            </td>
+            <td>پریسا شریفی</td>
+            <td>۳۱ مرداد ۱۴۰۵</td>
+            <td><span class="stamp-borrowed">امانت</span></td>
+            <td class="text-end">
+              <button type="button" class="btn-ghost !px-2.5 !py-1.5 text-xs">تمدید</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="font-medium">سووشون</p>
+              <p class="text-xs text-ink-muted">سیمین دانشور</p>
+            </td>
+            <td>جواد کریمی</td>
+            <td>۱۹ مرداد ۱۴۰۵</td>
+            <td><span class="stamp-overdue">دیرکرد</span></td>
+            <td class="text-end">
+              <button type="button" class="btn-ghost !px-2.5 !py-1.5 text-xs">یادآوری</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="font-medium">کلیدر</p>
+              <p class="text-xs text-ink-muted">محمود دولت‌آبادی</p>
+            </td>
+            <td>مریم توکلی</td>
+            <td>۱۱ شهریور ۱۴۰۵</td>
+            <td><span class="stamp-available">موجود</span></td>
+            <td class="text-end">
+              <button type="button" class="btn-ghost !px-2.5 !py-1.5 text-xs">تخصیص</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="font-medium">چشم‌هایش</p>
+              <p class="text-xs text-ink-muted">بزرگ علوی</p>
+            </td>
+            <td>امیر حدادی</td>
+            <td>۵ شهریور ۱۴۰۵</td>
+            <td><span class="stamp-borrowed">امانت</span></td>
+            <td class="text-end">
+              <button type="button" class="btn-ghost !px-2.5 !py-1.5 text-xs">تمدید</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="font-medium">همسایه‌ها</p>
+              <p class="text-xs text-ink-muted">احمد محمود</p>
+            </td>
+            <td>گیتی لطفی</td>
+            <td>۱۵ مرداد ۱۴۰۵</td>
+            <td><span class="stamp-overdue">دیرکرد</span></td>
+            <td class="text-end">
+              <button type="button" class="btn-ghost !px-2.5 !py-1.5 text-xs">یادآوری</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ================= COPY TO HERE ================= -->
+
+</body>
+</html>

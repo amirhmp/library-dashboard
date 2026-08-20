@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>کامپوننت: نوار بالا</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body class="font-body bg-surface text-ink dark:bg-surface-dark dark:text-ink-inverse">
+
+  <p class="border-b border-primary-100 bg-white p-3 text-sm text-ink-muted dark:border-white/10 dark:bg-surface-dark-muted">
+    روی آیکون خورشید/ماه بزن تا حالت تیره را تست کنی. پنجره را کوچک کن تا جمع‌شدن نوار جستجو و نام را ببینی.
+  </p>
+
+  <!-- ================= COPY FROM HERE ================= -->
+
+  <header
+    class="sticky top-0 z-20 flex items-center gap-3 border-b border-primary-100 bg-surface/90 px-4 py-3 backdrop-blur
+           dark:border-white/10 dark:bg-surface-dark/90 md:px-6"
+  >
+    <button data-aside-toggle type="button" class="btn-icon md:hidden" aria-label="باز کردن منو" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="size-5">
+        <line x1="4" y1="7" x2="20" y2="7" />
+        <line x1="4" y1="12" x2="20" y2="12" />
+        <line x1="4" y1="17" x2="20" y2="17" />
+      </svg>
+    </button>
+
+    <div class="relative hidden max-w-md flex-1 sm:block">
+      <svg
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"
+        class="pointer-events-none absolute start-3 top-1/2 size-4.5 -translate-y-1/2 text-ink-muted"
+      >
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <line x1="20" y1="20" x2="15.3" y2="15.3" />
+      </svg>
+      <input type="search" class="input-search" placeholder="جستجوی عنوان، نویسنده، شابک…" />
+    </div>
+
+    <div class="ms-auto flex items-center gap-1.5 sm:gap-2">
+      <button type="button" class="btn-icon sm:hidden" aria-label="جستجو">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <line x1="20" y1="20" x2="15.3" y2="15.3" />
+        </svg>
+      </button>
+
+      <button type="button" class="btn-icon relative" aria-label="اعلان‌ها">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+          <path d="M6 10.5a6 6 0 0 1 12 0c0 4 1.5 5.5 1.5 5.5H4.5S6 14.5 6 10.5Z" />
+          <path d="M10 19a2 2 0 0 0 4 0" />
+        </svg>
+        <span class="absolute start-2 top-2 size-2 rounded-full bg-danger"></span>
+      </button>
+
+      <button data-theme-toggle type="button" class="btn-icon" aria-label="تغییر حالت روشن/تاریک">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="size-5 hidden dark:block">
+          <circle cx="12" cy="12" r="4" />
+          <line x1="12" y1="2.5" x2="12" y2="5" />
+          <line x1="12" y1="19" x2="12" y2="21.5" />
+          <line x1="2.5" y1="12" x2="5" y2="12" />
+          <line x1="19" y1="12" x2="21.5" y2="12" />
+          <line x1="5" y1="5" x2="6.8" y2="6.8" />
+          <line x1="17.2" y1="17.2" x2="19" y2="19" />
+          <line x1="19" y1="5" x2="17.2" y2="6.8" />
+          <line x1="6.8" y1="17.2" x2="5" y2="19" />
+        </svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" class="size-5 dark:hidden">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" />
+        </svg>
+      </button>
+
+      <div class="mx-1 hidden h-6 w-px bg-primary-100 dark:bg-white/10 sm:block"></div>
+
+      <div class="hidden items-center gap-2 sm:flex">
+        <div class="avatar">سا</div>
+        <div class="hidden md:block">
+          <p class="text-sm font-semibold leading-tight">سارا احمدی</p>
+          <p class="text-xs leading-tight text-ink-muted">مدیر کتابخانه</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= COPY TO HERE ================= -->
+
+  <div class="p-6 text-sm text-ink-muted">بقیهٔ صفحه اینجا قرار می‌گیرد.</div>
+</body>
+</html>

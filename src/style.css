@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+
+/* a single variable font covering weights 100–900 in one file. */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/vazir.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "markazi";
+  src: url("/fonts/markazi.woff2") format("woff2");
+  font-weight: 400, 500, 600, 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   1. THEME — design tokens. Everything in this block becomes a Tailwind
+   utility automatically: --color-primary-600 -> bg-primary-600 / text-primary-600 / border-primary-600
+   ========================================================================== */
+@theme {
+  /* "Ink & Brass" palette — navy ink for structure, warm brass for accents.
+     Picked to feel like a library card catalogue, not another SaaS blue. */
+  --color-primary-50: #eef1f6;
+  --color-primary-100: #d7dce8;
+  --color-primary-200: #b1bcd4;
+  --color-primary-300: #8b9ab8;
+  --color-primary-400: #5c6d92;
+  --color-primary-500: #3c4d70;
+  --color-primary-600: #2c3a58;
+  --color-primary-700: #202b42;
+  --color-primary-800: #171f30;
+  --color-primary-900: #12182a;
+
+  --color-secondary-100: #f6e9d2;
+  --color-secondary-200: #ecd7ab;
+  --color-secondary-300: #e0b768;
+  --color-secondary-400: #cd9e46;
+  --color-secondary-500: #c08a2e;
+  --color-secondary-600: #9c6f22;
+  --color-secondary-700: #7a561b;
+
+  --color-surface: #f7f3ec;
+  --color-surface-muted: #efe8da;
+  --color-surface-dark: #12151c;
+  --color-surface-dark-muted: #1b2028;
+
+  --color-ink: #1c2130;
+  --color-ink-muted: #5b6273;
+  --color-ink-inverse: #f4f1ea;
+
+  --color-success: #3f7d58;
+  --color-success-soft: #e2efe6;
+  --color-warning: #c08a2e;
+  --color-warning-soft: #f6ecd8;
+  --color-danger: #b23a34;
+  --color-danger-soft: #f5e1df;
+
+  --font-display: "markazi", Tahoma, sans-serif;
+  --font-body: "Vazirmatn", Tahoma, sans-serif;
+
+  --radius-card: 0.85rem;
+  --shadow-card:
+    0 1px 2px rgba(18, 24, 42, 0.06), 0 10px 24px -14px rgba(18, 24, 42, 0.35);
+}
+
+/* Class-based dark mode so our own JS toggle (adding .dark to <html>) drives it,
+   instead of only following the OS preference. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================================================
+   2. BASE — small resets/defaults, kept minimal on purpose
+   ========================================================================== */
+@layer base {
+  html {
+    font-family: var(--font-body);
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+  }
+  body {
+    @apply bg-surface text-ink dark:bg-surface-dark dark:text-ink-inverse transition-colors duration-200;
+  }
+}
+
+/* ==========================================================================
+   3. COMPONENTS — shared classes so markup doesn't repeat long utility strings.
+   This is the layer students will lean on most: build it once, reuse everywhere.
+
+   RTL NOTE: this whole project is Persian/RTL-only (<html dir="rtl">), so
+   anywhere spacing or position depends on direction we use Tailwind's
+   *logical* utilities — ps-/pe- (padding-inline-start/end), ms-/me-
+   (margin-inline-start/end), start-/end- (inset-inline-start/end) — instead
+   of pl-/pr-, ml-/mr-, left-/right-. Logical utilities resolve automatically
+   from the page's dir attribute, so "start" always means "the reading edge"
+   (right, here) without us having to hand-flip every value. Symmetric
+   utilities (gap-, mx-, px-) needed no changes at all — direction can't
+   affect a value that's the same on both sides.
+   ========================================================================== */
+@layer components {
+  /* Note: Tailwind v4's @apply can only pull in real Tailwind utilities, not
+     other classes defined in this same @layer — so unlike a v3/Sass "extend"
+     pattern, each variant below spells out its full utility list rather than
+     building on a shared `.btn` / `.card` / `.badge` base class. This layer
+     is still exactly what buys us reuse: without it, every button in
+     index.html would carry this whole string inline. */
+
+  /* --- Buttons --- */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5
+           text-sm font-semibold transition-colors duration-150
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500
+           disabled:opacity-50 disabled:pointer-events-none
+           bg-primary-600 text-white hover:bg-primary-700
+           dark:bg-secondary-500 dark:text-primary-900 dark:hover:bg-secondary-400;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5
+           text-sm font-semibold transition-colors duration-150
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500
+           disabled:opacity-50 disabled:pointer-events-none
+           bg-surface-muted text-ink border border-primary-200 hover:bg-primary-50
+           dark:bg-surface-dark-muted dark:text-ink-inverse dark:border-white/10 dark:hover:bg-white/5;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5
+           text-sm font-semibold transition-colors duration-150
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500
+           disabled:opacity-50 disabled:pointer-events-none
+           bg-transparent text-ink-muted hover:bg-primary-50 hover:text-ink
+           dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white;
+  }
+  .btn-icon {
+    @apply inline-flex size-10 shrink-0 items-center justify-center rounded-full p-0
+           transition-colors duration-150
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-500
+           text-ink-muted hover:bg-primary-50 hover:text-ink
+           dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white;
+  }
+
+  /* --- Form fields --- */
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink dark:text-ink-inverse;
+  }
+  .input {
+    @apply w-full rounded-lg border border-primary-200 bg-white px-3.5 py-2.5 text-sm text-ink
+           placeholder:text-ink-muted/70
+           focus:outline-2 focus:outline-offset-1 focus:outline-secondary-500 focus:border-secondary-500
+           dark:border-white/10 dark:bg-surface-dark-muted dark:text-ink-inverse;
+  }
+  /* ps-10 leaves room at the *start* edge (right, in RTL) for an icon;
+     pe-3.5 is the ordinary small padding on the other side. */
+  .input-search {
+    @apply w-full rounded-lg border border-primary-200 bg-white py-2.5 ps-10 pe-3.5 text-sm text-ink
+           placeholder:text-ink-muted/70
+           focus:outline-2 focus:outline-offset-1 focus:outline-secondary-500 focus:border-secondary-500
+           dark:border-white/10 dark:bg-surface-dark-muted dark:text-ink-inverse;
+  }
+
+  /* --- Card --- */
+  .card {
+    @apply rounded-[var(--radius-card)] border border-primary-100 bg-white p-5
+           shadow-[var(--shadow-card)]
+           dark:border-white/10 dark:bg-surface-dark-muted;
+  }
+
+  /* The library "due-date stamp" (signature element) — dashed border, bold,
+     tiny rotation. No uppercase/tracking-wide here on purpose: Persian has
+     no letter case, and letter-spacing breaks the cursive joining between
+     Persian letters, so both would actively hurt legibility. */
+  .stamp-available {
+    @apply inline-flex items-center rounded border-2 border-dashed px-2 py-1 text-xs font-bold -rotate-2 border-success text-success;
+  }
+  .stamp-borrowed {
+    @apply inline-flex items-center rounded border-2 border-dashed px-2 py-1 text-xs font-bold -rotate-2 border-warning text-warning;
+  }
+  .stamp-overdue {
+    @apply inline-flex items-center rounded border-2 border-dashed px-2 py-1 text-xs font-bold -rotate-2 border-danger text-danger;
+  }
+
+  /* --- Avatar --- */
+  .avatar {
+    @apply flex size-9 shrink-0 items-center justify-center rounded-full
+           bg-secondary-200 text-sm font-semibold text-primary-800
+           dark:bg-secondary-500 dark:text-primary-900;
+  }
+
+  /* --- Sidebar navigation --- */
+  .nav-link {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium
+           text-primary-100/80 transition-colors hover:bg-white/5 hover:text-white;
+  }
+  .nav-link-active {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium
+           bg-secondary-500/15 text-secondary-300 transition-colors hover:bg-secondary-500/15 hover:text-secondary-300;
+  }
+  /* No uppercase/tracking-wider here either, same reason as the stamps. */
+  .sidebar-label {
+    @apply px-3 pb-2 pt-5 text-xs font-semibold text-primary-300/70;
+  }
+
+  /* --- Stat cards --- */
+  .stat-card {
+    @apply flex items-center gap-4 rounded-[var(--radius-card)] border border-primary-100 bg-white p-5
+           shadow-[var(--shadow-card)]
+           dark:border-white/10 dark:bg-surface-dark-muted;
+  }
+  .icon-chip {
+    @apply flex size-11 shrink-0 items-center justify-center rounded-xl;
+  }
+
+  /* --- Data table --- */
+  .data-table {
+    @apply w-full min-w-[640px] border-collapse text-start text-sm;
+
+    & thead th {
+      @apply border-b border-primary-100 pb-3 pe-4 text-xs font-semibold text-ink-muted dark:border-white/10;
+    }
+    & tbody td {
+      @apply border-b border-primary-50 py-3.5 pe-4 align-middle dark:border-white/5;
+    }
+    & tbody tr:last-child td {
+      @apply border-b-0;
+    }
+  }
+}
