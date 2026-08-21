@@ -1,16 +1,5 @@
 import "./style.css";
 
-/**
- * This file intentionally does exactly two things — nothing else is allowed
- * to be JS in this project:
- *   1. Toggle dark / light theme (adds/removes .dark on <html>, remembers choice)
- *   2. Open / close the sidebar (<aside>) on mobile
- *
- * Every selector below is optional-chained / null-checked so this single
- * file can be imported on every page (component test pages included)
- * without throwing, even when a given page doesn't have that element.
- */
-
 const root = document.documentElement;
 
 // ---------------------------------------------------------------------------
