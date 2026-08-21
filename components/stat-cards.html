@@ -1,75 +1,115 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>کامپوننت: کارت‌های آماری</title>
-  <script type="module" src="/src/main.js"></script>
-</head>
-<body class="font-body min-h-screen bg-surface p-6 text-ink dark:bg-surface-dark dark:text-ink-inverse">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کامپوننت: کارت‌های آماری</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body
+    class="font-body min-h-screen bg-surface p-6 text-ink dark:bg-surface-dark dark:text-ink-inverse"
+  >
+    <!-- ================= COPY FROM HERE ================= -->
 
-  <!-- ================= COPY FROM HERE ================= -->
-
-  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-
-    <div class="stat-card">
-      <div class="icon-chip bg-primary-50 text-primary-600 dark:bg-white/5 dark:text-primary-200">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5.5">
-          <path d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z" />
-          <line x1="12" y1="6" x2="12" y2="19" />
-        </svg>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div class="stat-card">
+        <div
+          class="icon-chip bg-primary-50 text-primary-600 dark:bg-white/5 dark:text-primary-200"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-5.5"
+          >
+            <path
+              d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z"
+            />
+            <line x1="12" y1="6" x2="12" y2="19" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold font-display">۲,۴۸۰</p>
+          <p class="text-sm text-ink-muted">کتاب‌های موجود</p>
+        </div>
       </div>
-      <div>
-        <p class="text-2xl font-semibold font-display">۲,۴۸۰</p>
-        <p class="text-sm text-ink-muted">کتاب‌های موجود</p>
+
+      <div class="stat-card">
+        <div
+          class="icon-chip bg-secondary-100 text-secondary-600 dark:bg-secondary-500/15 dark:text-secondary-300"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-5.5"
+          >
+            <circle cx="9" cy="8" r="3" />
+            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+            <circle cx="17" cy="8" r="2.5" />
+            <path d="M15.5 13.1c2.5.4 4.5 2.6 4.5 5.4" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold font-display">۶۱۲</p>
+          <p class="text-sm text-ink-muted">اعضای ثبت‌نام‌شده</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div
+          class="icon-chip bg-success-soft text-success dark:bg-success/15 dark:text-emerald-300"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-5.5"
+          >
+            <circle cx="12" cy="12" r="8.5" />
+            <path d="M12 7.5V12l3 2" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold font-display">۱۸۴</p>
+          <p class="text-sm text-ink-muted">امانت‌های فعال</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div
+          class="icon-chip bg-danger-soft text-danger dark:bg-danger/15 dark:text-rose-300"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-5.5"
+          >
+            <path d="M12 4.5 21 19.5H3L12 4.5Z" />
+            <line x1="12" y1="10" x2="12" y2="14.5" />
+            <circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold font-display">۱۲</p>
+          <p class="text-sm text-ink-muted">بازگشت‌های دیرکرد</p>
+        </div>
       </div>
     </div>
 
-    <div class="stat-card">
-      <div class="icon-chip bg-secondary-100 text-secondary-600 dark:bg-secondary-500/15 dark:text-secondary-300">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5.5">
-          <circle cx="9" cy="8" r="3" />
-          <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-          <circle cx="17" cy="8" r="2.5" />
-          <path d="M15.5 13.1c2.5.4 4.5 2.6 4.5 5.4" />
-        </svg>
-      </div>
-      <div>
-        <p class="text-2xl font-semibold font-display">۶۱۲</p>
-        <p class="text-sm text-ink-muted">اعضای ثبت‌نام‌شده</p>
-      </div>
-    </div>
-
-    <div class="stat-card">
-      <div class="icon-chip bg-success-soft text-success dark:bg-success/15 dark:text-emerald-300">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5.5">
-          <circle cx="12" cy="12" r="8.5" />
-          <path d="M12 7.5V12l3 2" />
-        </svg>
-      </div>
-      <div>
-        <p class="text-2xl font-semibold font-display">۱۸۴</p>
-        <p class="text-sm text-ink-muted">امانت‌های فعال</p>
-      </div>
-    </div>
-
-    <div class="stat-card">
-      <div class="icon-chip bg-danger-soft text-danger dark:bg-danger/15 dark:text-rose-300">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5.5">
-          <path d="M12 4.5 21 19.5H3L12 4.5Z" />
-          <line x1="12" y1="10" x2="12" y2="14.5" />
-          <circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none" />
-        </svg>
-      </div>
-      <div>
-        <p class="text-2xl font-semibold font-display">۱۲</p>
-        <p class="text-sm text-ink-muted">بازگشت‌های دیرکرد</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- ================= COPY TO HERE ================= -->
-
-</body>
+    <!-- ================= COPY TO HERE ================= -->
+  </body>
 </html>
