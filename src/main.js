@@ -41,7 +41,7 @@ const asideCloseBtn = document.querySelector("[data-aside-close]");
 function setAsideOpen(open) {
   if (!aside) return;
   aside.classList.toggle("translate-x-0", open);
-  aside.classList.toggle("-translate-x-full", !open);
+  aside.classList.toggle("translate-x-full", !open);
   asideBackdrop?.classList.toggle("hidden", !open);
   asideOpenBtn?.setAttribute("aria-expanded", String(open));
 }
