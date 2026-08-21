@@ -1,132 +1,243 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>کامپوننت: نوار کناری</title>
-  <script type="module" src="/src/main.js"></script>
-</head>
-<body class="font-body bg-surface text-ink dark:bg-surface-dark dark:text-ink-inverse">
-
-  <!-- ============================================================
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>کامپوننت: نوار کناری</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body
+    class="font-body bg-surface text-ink dark:bg-surface-dark dark:text-ink-inverse"
+  >
+    <!-- ============================================================
        TEST HARNESS ONLY — this bar + button are NOT part of the
        final dashboard. They just let us open the sidebar on a
        narrow (mobile) viewport without the rest of the page.
        ============================================================ -->
-  <div class="flex items-center justify-between gap-3 border-b border-primary-100 bg-white p-3 dark:border-white/10 dark:bg-surface-dark-muted md:hidden">
-    <p class="text-sm text-ink-muted">اندازه پنجره را تغییر بده تا breakpointها را ببینی. در حالت موبایل از این دکمه استفاده کن:</p>
-    <button data-aside-toggle type="button" class="btn-secondary shrink-0" aria-expanded="false">
-      باز کردن نوار کناری
-    </button>
-  </div>
-  <p class="hidden border-b border-primary-100 bg-white p-3 text-sm text-ink-muted dark:border-white/10 dark:bg-surface-dark-muted md:block">
-    از <code class="font-mono text-xs">md</code> به بالا، نوار کناری همیشه ثابت و نمایان است (بدون پس‌زمینهٔ تیره).
-  </p>
-
-  <div class="min-h-[600px]">
-
-    <!-- ================= COPY FROM HERE ================= -->
-
-    <div data-aside-backdrop class="fixed inset-0 z-30 hidden bg-primary-900/50 md:hidden"></div>
-
-    <aside
-      data-aside
-      class="fixed start-0 top-0 z-40 flex h-screen w-72 translate-x-full flex-col bg-primary-700 px-4 py-5
-             transition-transform duration-200 ease-out
-             md:translate-x-0"
+    <div
+      class="flex items-center justify-between gap-3 border-b border-primary-100 bg-white p-3 dark:border-white/10 dark:bg-surface-dark-muted md:hidden"
     >
-      <div class="mb-2 flex items-center justify-between px-2">
-        <a href="/index.html" class="flex items-center gap-2.5">
-          <span class="flex size-9 items-center justify-center rounded-lg bg-secondary-500 text-primary-900">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-5">
-              <path d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z" />
+      <p class="text-sm text-ink-muted">
+        اندازه پنجره را تغییر بده تا breakpointها را ببینی. در حالت موبایل از
+        این دکمه استفاده کن:
+      </p>
+      <button
+        data-aside-toggle
+        type="button"
+        class="btn-secondary shrink-0"
+        aria-expanded="false"
+      >
+        باز کردن نوار کناری
+      </button>
+    </div>
+    <p
+      class="hidden border-b border-primary-100 bg-white p-3 text-sm text-ink-muted dark:border-white/10 dark:bg-surface-dark-muted md:block"
+    >
+      از <code class="font-mono text-xs">md</code> به بالا، نوار کناری همیشه
+      ثابت و نمایان است (بدون پس‌زمینهٔ تیره).
+    </p>
+
+    <div class="min-h-[600px]">
+      <!-- ================= COPY FROM HERE ================= -->
+
+      <div
+        data-aside-backdrop
+        class="fixed inset-0 z-30 hidden bg-primary-900/50 md:hidden"
+      ></div>
+
+      <aside
+        data-aside
+        class="fixed start-0 top-0 z-40 flex h-screen w-72 translate-x-full flex-col bg-primary-700 px-4 py-5 transition-transform duration-200 ease-out md:translate-x-0"
+      >
+        <div class="mb-2 flex items-center justify-between px-2">
+          <a href="/index.html" class="flex items-center gap-2.5">
+            <span
+              class="flex size-9 items-center justify-center rounded-lg bg-secondary-500 text-primary-900"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="size-5"
+              >
+                <path
+                  d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z"
+                />
+                <line x1="12" y1="6" x2="12" y2="19" />
+              </svg>
+            </span>
+            <span class="font-display text-lg font-semibold text-white"
+              >قفسه</span
+            >
+          </a>
+          <button
+            data-aside-close
+            type="button"
+            class="btn-icon text-white/70 hover:bg-white/10 hover:text-white md:hidden"
+            aria-label="بستن منو"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              class="size-5"
+            >
+              <line x1="6" y1="6" x2="18" y2="18" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="min-h-0 flex-1 overflow-y-auto">
+          <p class="sidebar-label">کتابخانه</p>
+          <a href="#" class="nav-link-active">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
+              <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
+              <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
+              <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
+            </svg>
+            داشبورد
+          </a>
+          <a href="#" class="nav-link">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <path
+                d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z"
+              />
               <line x1="12" y1="6" x2="12" y2="19" />
             </svg>
-          </span>
-          <span class="font-display text-lg font-semibold text-white">قفسه</span>
-        </a>
-        <button data-aside-close type="button" class="btn-icon text-white/70 hover:bg-white/10 hover:text-white md:hidden" aria-label="بستن منو">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" class="size-5">
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="18" y1="6" x2="6" y2="18" />
-          </svg>
-        </button>
-      </div>
+            فهرست کتاب‌ها
+          </a>
+          <a href="#" class="nav-link">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <circle cx="9" cy="8" r="3" />
+              <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
+              <circle cx="17" cy="8" r="2.5" />
+              <path d="M15.5 13.1c2.5.4 4.5 2.6 4.5 5.4" />
+            </svg>
+            اعضا
+          </a>
+          <a href="#" class="nav-link">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M12 7.5V12l3 2" />
+            </svg>
+            امانت‌ها
+          </a>
 
-      <nav class="min-h-0 flex-1 overflow-y-auto">
-        <p class="sidebar-label">کتابخانه</p>
-        <a href="#" class="nav-link-active">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <rect x="3.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="3.5" width="7" height="7" rx="1.5" />
-            <rect x="3.5" y="13.5" width="7" height="7" rx="1.5" />
-            <rect x="13.5" y="13.5" width="7" height="7" rx="1.5" />
-          </svg>
-          داشبورد
-        </a>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <path d="M12 6c-1.5-1.3-3.6-2-6-2v13c2.4 0 4.5.7 6 2 1.5-1.3 3.6-2 6-2V4c-2.4 0-4.5.7-6 2Z" />
-            <line x1="12" y1="6" x2="12" y2="19" />
-          </svg>
-          فهرست کتاب‌ها
-        </a>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <circle cx="9" cy="8" r="3" />
-            <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
-            <circle cx="17" cy="8" r="2.5" />
-            <path d="M15.5 13.1c2.5.4 4.5 2.6 4.5 5.4" />
-          </svg>
-          اعضا
-        </a>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <circle cx="12" cy="12" r="8.5" />
-            <path d="M12 7.5V12l3 2" />
-          </svg>
-          امانت‌ها
-        </a>
+          <p class="sidebar-label">مدیریت</p>
+          <a href="#" class="nav-link">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <path
+                d="M6 4h9l4 4v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z"
+              />
+              <line x1="8.5" y1="12" x2="15.5" y2="12" />
+              <line x1="8.5" y1="16" x2="13" y2="16" />
+            </svg>
+            گزارش‌ها
+          </a>
+          <a href="#" class="nav-link">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5"
+            >
+              <circle cx="12" cy="12" r="3" />
+              <path
+                d="M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M17.7 6.3l-1.6 1.6M7.9 16.1l-1.6 1.6M17.7 17.7l-1.6-1.6M7.9 7.9 6.3 6.3"
+              />
+            </svg>
+            تنظیمات
+          </a>
+        </nav>
 
-        <p class="sidebar-label">مدیریت</p>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <path d="M6 4h9l4 4v12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" />
-            <line x1="8.5" y1="12" x2="15.5" y2="12" />
-            <line x1="8.5" y1="16" x2="13" y2="16" />
-          </svg>
-          گزارش‌ها
-        </a>
-        <a href="#" class="nav-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 3.5v2.2M12 18.3v2.2M20.5 12h-2.2M5.7 12H3.5M17.7 6.3l-1.6 1.6M7.9 16.1l-1.6 1.6M17.7 17.7l-1.6-1.6M7.9 7.9 6.3 6.3" />
-          </svg>
-          تنظیمات
-        </a>
-      </nav>
-
-      <div class="mt-4 flex items-center gap-3 rounded-lg border border-white/10 p-3">
-        <div class="avatar">سا</div>
-        <div class="min-w-0 flex-1">
-          <p class="truncate text-sm font-semibold text-white">سارا احمدی</p>
-          <p class="truncate text-xs text-primary-200">مدیر کتابخانه</p>
+        <div
+          class="mt-4 flex items-center gap-3 rounded-lg border border-white/10 p-3"
+        >
+          <div class="avatar">سا</div>
+          <div class="min-w-0 flex-1">
+            <p class="truncate text-sm font-semibold text-white">
+              امیرحسین مهدی پور
+            </p>
+            <p class="truncate text-xs text-primary-200">مدیر کتابخانه</p>
+          </div>
+          <button
+            type="button"
+            class="btn-icon text-white/60 hover:bg-white/10 hover:text-white"
+            aria-label="خروج از حساب"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-4.5 -scale-x-100"
+            >
+              <path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" />
+              <line x1="20" y1="12" x2="10" y2="12" />
+              <path d="M16 8l4 4-4 4" />
+            </svg>
+          </button>
         </div>
-        <button type="button" class="btn-icon text-white/60 hover:bg-white/10 hover:text-white" aria-label="خروج از حساب">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="size-4.5 -scale-x-100">
-            <path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" />
-            <line x1="20" y1="12" x2="10" y2="12" />
-            <path d="M16 8l4 4-4 4" />
-          </svg>
-        </button>
+      </aside>
+
+      <!-- ================= COPY TO HERE ================= -->
+
+      <div class="p-6 text-sm text-ink-muted md:ps-72">
+        بقیهٔ صفحه اینجا قرار می‌گیرد. این ناحیهٔ خاکستری جای نوار بالا و محتوای
+        اصلی را نشان می‌دهد.
       </div>
-    </aside>
-
-    <!-- ================= COPY TO HERE ================= -->
-
-    <div class="p-6 text-sm text-ink-muted md:ps-72">
-      بقیهٔ صفحه اینجا قرار می‌گیرد. این ناحیهٔ خاکستری جای نوار بالا و محتوای اصلی را نشان می‌دهد.
     </div>
-  </div>
-</body>
+  </body>
 </html>
